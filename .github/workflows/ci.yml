@@ -60,10 +60,10 @@ jobs:
         name: "Update image tag using Kustomize"
         run: |
 
-          cd k8s
+          cd k8s/dummy-pdf-or-png
           kustomize edit set image ${{ env.IMAGE_NAME }}:${{ env.APP-VERSION }}
           git add kustomization.yml
-          cd ..
+          cd ../..
 
           git config --local user.email "bump-version-bump@github.com"
           git config --local user.name "github-actions-bump-version"
