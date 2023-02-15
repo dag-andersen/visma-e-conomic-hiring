@@ -17,8 +17,7 @@ spec:
       - image: dagandersen/visma-sre
         name: visma-assignment
         ports:
-        - name: health
-          containerPort: 3000
+        - containerPort: 3000
         resources:
           limits:
             cpu: 500m
@@ -29,7 +28,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /health
-            port: health
+            port: 3000
           initialDelaySeconds: 5
           periodSeconds: 10
 status: {}
