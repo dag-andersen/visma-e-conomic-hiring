@@ -9,4 +9,4 @@ resources:
 - ingress.yml
 images:
 - name: dagandersen/visma-sre
-  newTag: "4186605264"
+  newTag: "4186895357"
