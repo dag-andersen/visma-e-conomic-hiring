@@ -3,3 +3,6 @@ kind: Kustomization
 namePrefix: visma-
 resources:
 - deployment.yml
+images:
+- name: dagandersen/visma-sre
+  newTag: "4185288564"
