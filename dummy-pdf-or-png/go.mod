@@ -1,4 +1,4 @@
-module github.com/e-conomic/hiring-assignments/sre/dummy-pdf-or-png
+module github.com/dag-andersen/visma-e-conomic-hiring/dummy-pdf-or-png
 
 go 1.17
 
