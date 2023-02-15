@@ -5,3 +5,4 @@ resources:
 - nginx.yml
 - argo-config.yml
 - dummy-pdf-or-png.yml
+- prometheus.yml

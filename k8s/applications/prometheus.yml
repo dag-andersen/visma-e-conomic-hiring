@@ -71,11 +71,11 @@ metadata:
   name: prometheus-extra
   namespace: argocd
 spec:
-  project: infrastructure
+  project: default
   source:
     repoURL: https://github.com/dag-andersen/visma-e-conomic-hiring
     targetRevision: HEAD
-    path: ./prometheus
+    path: ./k8s/prometheus
   destination:
     server: https://kubernetes.default.svc
     namespace: default
