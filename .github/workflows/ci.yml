@@ -6,11 +6,13 @@ on:
       - master
     paths:
       - "dummy-pdf-or-png/**"
+      - ".github/workflows/**"
   push:
     branches:
       - master
     paths:
       - "dummy-pdf-or-png/**"
+      - ".github/workflows/**"
 
 concurrency:
   group: "build"
