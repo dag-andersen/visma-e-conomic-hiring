@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: test
-  name: test
+  name: assignment
 spec:
   replicas: 1
   selector:
@@ -16,7 +14,7 @@ spec:
         app: test
     spec:
       containers:
-      - image: dagandersen/visma-assignment
+      - image: dagandersen/visma-sre
         name: visma-assignment
         ports:
         - name: health
