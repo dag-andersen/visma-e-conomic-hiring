@@ -54,8 +54,8 @@ jobs:
           platforms: linux/amd64,linux/arm64,
           push: true
           tags: ${{ env.IMAGE_NAME }}:latest, ${{ env.IMAGE_NAME }}:${{ env.APP-VERSION }}
-      - uses: imranismail/setup-kustomize@v2
 
+      - uses: imranismail/setup-kustomize@v2
       - id: "kustomize-update-tag"
         name: "Update image tag using Kustomize"
         run: |
@@ -75,4 +75,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-          force_with_lease: true
+          force: true
