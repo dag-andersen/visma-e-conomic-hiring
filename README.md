@@ -33,30 +33,26 @@ by providing tools, advice and assistance.
 ## The Assignment
 
 1. Develop a microservice.
-	1. It takes HTTP GET requests with a random ID (/1, /529852, etc.), requests a 
+	1. :white_check_mark: It takes HTTP GET requests with a random ID (/1, /529852, etc.), requests a 
   document from the microservice we have provided in the `dummy-pdf-or-png` 
   subdirectory of this repository, and then returns the document with correct 
   mime-type.
-	1. Provides an endpoint for health monitoring.
-	1. Has tests, so regressions can be identified.
-	1. Fails safe.
-	1. Logs relevant info.
-	1. Exposes prometheus metrics.
-
-
+	1. :white_check_mark: Provides an endpoint for health monitoring.
+	1. :x: Has tests, so regressions can be identified.
+	1. :white_check_mark: Fails safe.
+	1. :white_check_mark: Logs relevant info.
+	1. :white_check_mark: Exposes prometheus metrics.
 
 1. Provision the infrastructure.
-	1. Use IaC.
-	1. Provision resources needed to run the services.
-	1. Provision resources needed to view the logs and metrics of the service.
-
-
+	1. :x: Use IaC.
+	1. :white_check_mark: Provision resources needed to run the services.
+	1. :white_check_mark: Provision resources needed to view the logs and metrics of the service.
 
 1. Package and deploy the  service. 
-	1. Provide a docker file and containerize the service. 
-	1. Setup a CI/CD pipeline for the service. It should build the service, 
+	1. :white_check_mark: Provide a docker file and containerize the service. 
+	1. :white_check_mark: Setup a CI/CD pipeline for the service. It should build the service, 
 	run the tests and deploy it.
-	1. Provide a k8s manifest or use helm charts.
+	1. :white_check_mark: Provide a k8s manifest or use helm charts.
 
 
 1. Consider the developer experience.

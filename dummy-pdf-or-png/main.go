@@ -4,6 +4,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -25,10 +26,6 @@ var (
 		Name: "requests_png_served_total",
 		Help: "The total number of requests",
 	})
-	corruptServed = promauto.NewCounter(prometheus.CounterOpts{
-		Name: "requests_corrupt_served_total",
-		Help: "The total number of requests",
-	})
 )
 
 func serveRandomFile(w http.ResponseWriter, r *http.Request) {
@@ -38,30 +35,25 @@ func serveRandomFile(w http.ResponseWriter, r *http.Request) {
 
 	log.Printf("Request for id: %s", id)
 
-	if id == "0" {
-		pdfServed.Inc()
-		http.ServeFile(w, r, "./dummy.pdf")
-		return
-	} else if id == "1" {
-		pngServed.Inc()
-		http.ServeFile(w, r, "./dummy.png")
-		return
+	// parse id as int
+	idInt, err := strconv.Atoi(id)
+	if err != nil {
+		log.Printf("Error parsing id: %s", err)
+		log.Printf("Serving random file")
+		idInt = rand.Intn(10)
 	}
 
-	rnd := rand.Intn(10)
-	log.Printf("Random number: %d", rnd)
-	if rnd < 5 {
+	if idInt%2 == 0 {
+		pdfServed.Inc()
+		log.Printf("Serving PDF")
+		http.ServeFile(w, r, "./dummy.pdf")
+		return
+	} else {
 		pngServed.Inc()
+		log.Printf("Serving PNG")
 		http.ServeFile(w, r, "./dummy.png")
 		return
 	}
-	if rnd < 9 {
-		pdfServed.Inc()
-		http.ServeFile(w, r, "./dummy.pdf")
-		return
-	}
-	corruptServed.Inc()
-	http.ServeFile(w, r, "./corrupt-dummy.pdf")
 }
 
 func serveHealthCheck(w http.ResponseWriter, r *http.Request) {
