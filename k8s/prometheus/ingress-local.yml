@@ -1,13 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-prometheus
+  name: ingress-prometheus-local  
   namespace: prometheus
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: prometheus.dagandersen.com
+  - host: prometheus.localhost
     http:
       paths:
         - pathType: Prefix
