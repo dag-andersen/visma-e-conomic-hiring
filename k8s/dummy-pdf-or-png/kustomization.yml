@@ -8,6 +8,7 @@ resources:
 - service.yml
 - ingress.yml
 - ingress-local.yml
+- monitor.yml
 images:
 - name: dagandersen/visma-sre
   newTag: "4186895357"
