@@ -1,3 +1,6 @@
-
-
 repo-creds.yml
+
+*.hcl
+**/.terraform**
+*.tfstate
+*.tfstate.backup

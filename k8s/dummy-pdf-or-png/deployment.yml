@@ -24,4 +24,3 @@ spec:
             port: 3000
           initialDelaySeconds: 5
           periodSeconds: 10
-status: {}

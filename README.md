@@ -32,7 +32,7 @@ by providing tools, advice and assistance.
 
 ## The Assignment
 
-1. Develop a microservice.
+1. Develop a microservice. (My focus 🔥)
 	1. :white_check_mark: It takes HTTP GET requests with a random ID (/1, /529852, etc.), requests a 
   document from the microservice we have provided in the `dummy-pdf-or-png` 
   subdirectory of this repository, and then returns the document with correct 
@@ -43,12 +43,12 @@ by providing tools, advice and assistance.
 	1. :white_check_mark: Logs relevant info.
 	1. :white_check_mark: Exposes prometheus metrics.
 
-1. Provision the infrastructure.
-	1. :x: Use IaC.
+1. Provision the infrastructure. (Not my focus 🤷‍♂️)
+	1. :white_check_mark: Use IaC.
 	1. :white_check_mark: Provision resources needed to run the services.
 	1. :white_check_mark: Provision resources needed to view the logs and metrics of the service.
 
-1. Package and deploy the  service. 
+1. Package and deploy the service. (My focus 🔥)
 	1. :white_check_mark: Provide a docker file and containerize the service. 
 	1. :white_check_mark: Setup a CI/CD pipeline for the service. It should build the service, 
 	run the tests and deploy it.

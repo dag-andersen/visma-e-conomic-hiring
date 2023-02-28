@@ -1,12 +1,12 @@
 cluster-name ?= "visma-demo"
-region ?= "us-central1"
-zone ?= "us-central1-a"
-zonee ?= "us-central1-a"
+region ?= "europe-west4-a"
+zone ?= "europe-west4-a"
+zonee ?= "europe-west4-a"
 project ?= "summer2021-319316"
 port ?= 8080
 
-start: create-cluster argo-setup
-stop: delete-cluster
+start: terraform-cluster-create argo-setup
+stop: terraform-cluster-delete
 
 # Cluster 
 
@@ -107,6 +107,9 @@ argo-bootstrap-apps:
 
 
 # other ------------------------------------
+
+prometheus-login-creds:
+	@printf "prometheus - username: admin, password: $$(kubectl get secret --namespace prometheus prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo)\n"
 
 fix-ingress-issues:
 	kubectl delete -A ValidatingWebhookConfiguration helm-ingress-ingress-nginx-admission \
