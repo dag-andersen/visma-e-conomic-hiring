@@ -24,7 +24,6 @@ terraform-cluster-create:
 
 terraform-cluster-delete:
 	cd terraform && terraform destroy
-	make context
 
 # Kind -------
 
