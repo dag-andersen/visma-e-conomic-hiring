@@ -11,4 +11,4 @@ resources:
 - monitor.yml
 images:
 - name: dagandersen/visma-sre
-  newTag: "4195422929"
+  newTag: "4312901798"
