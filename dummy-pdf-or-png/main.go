@@ -38,7 +38,7 @@ func serveRandomFile(w http.ResponseWriter, r *http.Request) {
 	// parse id as int
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
-		log.Printf("Error parsing id: %s", err)
+		log.Printf("Error parsing id: %s", id)
 		log.Printf("Serving random file")
 		idInt = rand.Intn(10)
 	}
