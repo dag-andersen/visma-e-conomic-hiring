@@ -7,7 +7,6 @@ resources:
 - deployment.yml
 - service.yml
 - ingress.yml
-- ingress-local.yml
 - monitor.yml
 images:
 - name: dagandersen/visma-sre
