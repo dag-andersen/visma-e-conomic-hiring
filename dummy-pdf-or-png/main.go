@@ -15,15 +15,15 @@ import (
 
 var (
 	requestReceived = promauto.NewCounter(prometheus.CounterOpts{
-		Name: "requests_total",
+		Name: "dummy_requests_total",
 		Help: "The total number of requests",
 	})
 	pdfServed = promauto.NewCounter(prometheus.CounterOpts{
-		Name: "requests_pdf_served_total",
+		Name: "dummy_requests_pdf_served_total",
 		Help: "The total number of requests",
 	})
 	pngServed = promauto.NewCounter(prometheus.CounterOpts{
-		Name: "requests_png_served_total",
+		Name: "dummy_requests_png_served_total",
 		Help: "The total number of requests",
 	})
 )
@@ -63,8 +63,8 @@ func serveHealthCheck(w http.ResponseWriter, r *http.Request) {
 func main() {
 	log.Println("Starting dummy-pdf-or-png server")
 	rand.Seed(time.Now().UnixNano())
-	http.HandleFunc("/", serveRandomFile)
 	http.HandleFunc("/health", serveHealthCheck)
+	http.HandleFunc("/", serveRandomFile)
 	http.Handle("/metrics", promhttp.Handler())
 
 	err := http.ListenAndServe(":3000", nil)
