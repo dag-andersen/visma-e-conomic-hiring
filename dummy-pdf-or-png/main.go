@@ -34,6 +34,7 @@ func serveRandomFile(w http.ResponseWriter, r *http.Request) {
 	requestReceived.Inc()
 
 	log.Printf("Request for id: %s", id)
+	log.Printf("DEMO TIME")
 
 	// parse id as int
 	idInt, err := strconv.Atoi(id)
