@@ -62,6 +62,7 @@ func serveHealthCheck(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	log.Println("Starting dummy-pdf-or-png server")
+	log.Println("HELLO DEMO")
 	rand.Seed(time.Now().UnixNano())
 	http.HandleFunc("/health", serveHealthCheck)
 	http.HandleFunc("/", serveRandomFile)
