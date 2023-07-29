@@ -10,7 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
-  - host: argo.dagandersen.com
+  - host: argo.localhost
     http:
       paths:
       - path: /

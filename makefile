@@ -5,7 +5,7 @@ zonee ?= "europe-west4-a"
 project ?= "summer2021-319316"
 port ?= 8080
 
-start: terraform-cluster-create argo-setup
+start: create-with-ingress argo-setup
 stop: terraform-cluster-delete
 
 # Cluster 
@@ -95,7 +95,7 @@ argo-ui-localhost-port-forward: argo-login-credentials
 	@echo
 
 argo-login-credentials:
-	@echo "username: admin, password: $$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo)"
+	@echo "username: admin, password: $$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo) \n"
 
 argo-bootstrap-creds:
 	@echo "Bootstrapping credentials..."
