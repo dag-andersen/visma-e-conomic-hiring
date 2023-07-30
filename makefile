@@ -6,7 +6,7 @@ project ?= "summer2021-319316"
 port ?= 8080
 
 start: create-with-ingress argo-setup
-stop: terraform-cluster-delete
+stop: delete-kind
 
 # Cluster 
 
