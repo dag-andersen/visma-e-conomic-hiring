@@ -8,4 +8,4 @@ resources:
 
 images:
 - name: dagandersen/hello-world
-  newTag: "prod-88bd2e7b-1690650023"
+  newTag: prod-d50c64db-1690709830
