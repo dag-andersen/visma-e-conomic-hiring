@@ -4,3 +4,5 @@ repo-creds.yml
 **/.terraform**
 *.tfstate
 *.tfstate.backup
+
+.DS_Store

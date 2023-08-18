@@ -105,6 +105,22 @@ argo-bootstrap-apps:
 	@echo "Bootstrapping apps..."
 	@kubectl apply -f ./k8s/bootstrap/bootstrap.yml
 
+# Flux ------------------------------------
+
+flux-setup:
+	flux bootstrap github \
+		--components-extra=image-reflector-controller,image-automation-controller \
+		--owner=dag-andersen \
+		--branch=master \
+		--repository=visma-e-conomic-hiring \
+		--path=clusters/core \
+		--token-auth \
+		--personal
+	gitops create dashboard ww-gitops --password=root
+	kubectl apply -f ./flux-ingress.yml
+	kubectl create secret docker-registry my-secret --from-file=.dockerconfigjson=path/to/.docker/config.json || true
+	echo "prometheus - username: admin, password: root\n"
+	open http://flux.localhost
 
 # other ------------------------------------
 
