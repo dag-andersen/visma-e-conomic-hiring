@@ -109,7 +109,7 @@ argo-bootstrap-apps:
 
 flux-setup:
 	flux bootstrap github \
-		--components-extra=image-reflector-controller,image-automation-controller \
+		--components=source-controller,kustomize-controller,image-reflector-controller,image-automation-controller \
 		--owner=dag-andersen \
 		--branch=master \
 		--repository=visma-e-conomic-hiring \

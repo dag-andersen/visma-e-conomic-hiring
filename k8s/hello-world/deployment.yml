@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: echo-client
-        image: dagandersen/hello-world:latest # {"$imagepolicy": "default:hello-world-image-policy"}
+        image: dagandersen/hello-world # {"$imagepolicy": "default:hello-world-image-policy"}
         resources:
           requests:
             cpu: 0
