@@ -5,7 +5,7 @@ zonee ?= "europe-west4-a"
 project ?= "summer2021-319316"
 port ?= 8080
 
-start: create-with-ingress argo-setup
+start: create-with-ingress argo-setup flux-setup
 stop: delete-kind
 
 # Cluster 
@@ -118,8 +118,8 @@ flux-setup:
 		--personal
 	gitops create dashboard ww-gitops --password=root
 	kubectl apply -f ./flux-ingress.yml
-	kubectl create secret docker-registry my-secret --from-file=.dockerconfigjson=path/to/.docker/config.json || true
-	echo "prometheus - username: admin, password: root\n"
+	kubectl create secret docker-registry docker-secret --from-file=.dockerconfigjson=../../.docker/config.json || true
+	echo "\Flux - username: admin, password: root\n"
 	open http://flux.localhost
 
 # other ------------------------------------

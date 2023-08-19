@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: image-repository
+  namespace: default
+spec:
+  image: dagandersen/hello-world
+  interval: 1m0s
+  secretRef:
+    name: docker-secret

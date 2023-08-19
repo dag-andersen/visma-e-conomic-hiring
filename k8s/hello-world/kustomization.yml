@@ -5,7 +5,5 @@ commonLabels:
   app: hello-world
 resources:
 - deployment.yml
-
-images:
-- name: dagandersen/hello-world
-  newTag: prod-d50c64db-1690709830
+- image-repository.yml
+- image-policy.yml 
