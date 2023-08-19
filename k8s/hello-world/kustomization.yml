@@ -9,4 +9,4 @@ resources:
 - image-policy.yml
 images:
 - name: dagandersen/hello-world
-  newTag: prod-289758e0-1692430741
+  newTag: prod-bd944f87-1692432327
