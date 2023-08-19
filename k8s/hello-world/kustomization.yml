@@ -6,4 +6,7 @@ commonLabels:
 resources:
 - deployment.yml
 - image-repository.yml
-- image-policy.yml 
+- image-policy.yml
+images:
+- name: dagandersen/hello-world
+  newTag: prod-289758e0-1692430741
